@@ -1,0 +1,63 @@
+/* Custom dropdown (select) UI element, modified from w3schools example */
+
+.custom-dropdown {
+   width: 100%;
+   position: relative;
+   background-color: inherit;
+ }
+ 
+ .custom-dropdown select {
+   display: none; 
+ }
+ 
+ .select-selected {
+   background-color: inherit;
+ }
+ 
+ .select-selected:after {
+   position: absolute;
+   content: "";
+   top: 16px;
+   right: 10px;
+   width: 0;
+   height: 0;
+   border: 6px solid transparent;
+   border-color: rgb(0, 0, 0) transparent transparent transparent;
+ }
+ 
+ .select-selected.select-arrow-active:after {
+   border-color: transparent transparent rgb(0, 0, 0) transparent;
+   top: 7px;
+ }
+ 
+ .select-selected.select-arrow-none:after {
+   border: none;
+ }
+ 
+ .select-items div,.select-selected {
+   color: inherit;
+   padding: 8px 28px 7px 14px;
+   cursor: pointer;
+ }
+ 
+ .select-items {
+   border-top: 2px solid rgb(0, 0, 0, 0.1); 
+   position: absolute;
+   background-color: inherit;
+   top: 100%;
+   left: 0;
+   right: 0;
+   z-index: 99;
+ }
+ 
+ .select-items div {
+   border-bottom: 1px solid rgb(0, 0, 0, 0.1); 
+ }
+ 
+ .select-hide {
+   display: none;
+ }
+ 
+ .select-items div:hover, .same-as-selected {
+   background-color: rgba(0, 0, 0, 0.05);
+ }

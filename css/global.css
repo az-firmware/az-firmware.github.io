@@ -1,0 +1,101 @@
+html {
+  overflow-y: scroll;
+  font-size: 17px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  font-family: Auza, sans-serif;
+}
+
+body {
+  font-weight: 300;
+  max-width: 850px;
+  margin: auto;
+  background-color: rgb(248, 248, 248);
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+h1 {
+  font-weight: 300;
+} 
+
+h1 {
+  font-weight: 300;
+} 
+
+b { 
+  font-weight: 400;
+}
+
+ol li{
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-left: 25px;
+  text-indent: -25px;
+}
+
+ul li{
+  list-style-type: disc;
+  list-style-position: outside;
+  text-indent: 0px;
+  margin-left: 19px;
+}
+
+@font-face {
+  font-family: Auza;
+  src: url(../resources/fonts/Auza-Thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Auza;
+  src: url(../resources/fonts/Auza-ExtraLight.ttf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Auza;
+  src: url(../resources/fonts/Auza-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Auza;
+  src: url(../resources/fonts/Auza-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Auza;
+  src: url(../resources/fonts/Auza-Medium.ttf);
+  font-weight: 500;
+}
+
+.guide {
+  display: block;
+  padding-bottom: 25px;
+  /* padding-left: 15px;
+  padding-right: 15px;  */
+  margin-bottom: 25px;
+  /* margin-top: 10px; */
+  border-left-width: 0px;
+  border-right-width: 0px;  
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-color: lightgrey;
+  border-style: double; 
+  /* background-color: rgb(249, 249, 249); */
+}  
+
+.guide-heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding-top: 1.3rem;
+  padding-bottom: 1.2rem;
+  color: rgb(0, 0, 0);
+}

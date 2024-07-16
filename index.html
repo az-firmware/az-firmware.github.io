@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Auza Firmware</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
+    <script src="js/devanlai-webdfu/dfu.js"></script>
+    <script src="js/devanlai-webdfu/dfuse.js"></script>
+
+    <script src="js/auza-firmware.js"></script>
+    <script src="js/dropdown.js"></script>
+
+    <style>
+      p.warning {
+        color: red;
+      }
+      p.error {
+        color: red;
+        font-weight: bold;
+      }
+      label.radio {
+        display: inline;
+      }
+      input:invalid {
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-heading">
+      <img id="logo" src="resources/auza-logo.svg" alt="Auza">
+      <h1 id='page-title'></h1>
+    </div>
+    <div id="tabs">
+      <button class="tab-link" onclick="openTab(event, 1)" id="default-tab">Connection Guide</button>
+      <button class="tab-link" onclick="openTab(event, 2)">Firmware Tool</button>
+    </div>    
+    <div id="tab-connect-guide">
+      <div id="select-product" class="custom-dropdown">
+        <select>
+          <option value="0">Select Module:</option>
+        </select>
+      </div>
+      <div class="guide" style='display:none'>
+        <div id="tool-compatibility">
+          <div class="guide-heading">Firmware Tool Compatibility:</div>  
+          <b>Computer/ Device</b>
+          <ul>
+            <li>Apple Mac, running macOS</li>
+            <li>Windows PC (10 or later) with this windows driver installed</li>
+            <li>Android device (the device and USB cable/ adaptor both need to be USB OTG compatible) </li>
+          </ul> 
+          <br><b>Web Browser</b>
+          <ul>
+            <li>Google Chrome (version 61 or later)</li>
+            <li>Microsoft Edge (version 79 or later)</li>
+          </ul>  
+        </div>
+      </div>
+    </div>
+    <div id="tab-firmware-tool">
+      <div id="update-interface">
+        <div id="interface-top-area">
+          <div id ="connect-div">
+            <button 
+              id="connect" type = "button" 
+              class = "connect-connect nohighlight buttonemph">
+              CONNECT
+            </button>
+            <span>to STM32 BOOTLOADER</span>
+          </div>
+          <div id="status-area">
+            <div id="status-heading">
+              <b>STATUS</b>
+            </div>
+            <div id="status">
+              Browser not connected to module
+            </div>
+          </div>
+        </div>
+        <div id="interface-utility-area">
+          <fieldset id ="check-version-div">
+            <legend>Check Firmware Version</legend>
+            <button id="check" type = "button" class = "nohighlight buttonemph">CHECK</button>
+            <div id ="version-result-text"></div>
+          </fieldset>
+          <fieldset id ="update-div">
+            <legend>Update Firmware</legend>
+            <div>
+              <div id="select-version-area"> 
+                <div id="select-version" class="custom-dropdown nohighlight">
+                  <select>
+                    <option value="0">Select Firmware Version:</option>
+                  </select>
+                </div>
+                <div id ="latest-checkbox" class="latest-default" onclick="toggleLatestBox()">
+                  <div class="nohighlight">&#x2715</div>
+                  <div class="nohighlight">Latest</div>
+                </div> 
+              </div>
+              <button id="update" type = "button" class = "nohighlight buttonemph">UPDATE</button>
+              <div>
+                <div id = "progbar-box">
+                  <progress id="progbar" max="1000" value="0"></progress>
+                </div>  
+              </div>
+            </div>
+            <div id="proginfo"></div>
+          </fieldset>  
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+    "auzaProducts": [
+        {   
+            "name": "Wave Packets",
+            "filename": "wavepackets",
+            "productId": 1,
+            "hasGuide" : true,
+            "compatWithTool" : true,
+            "forFlashSize": 524288,
+            "availableVersions": [
+                "1.0.3",
+                "1.0.2"
+            ]
+        },
+        {   
+            "name": "Pretend Future Module",
+            "filename": "pretend_future_module",
+            "productId": 2,
+            "hasGuide" : true,
+            "compatWithTool" : true,
+            "forFlashSize": 524288,
+            "availableVersions": [
+                "1.0.0",
+                "1.0.1"
+            ]
+        },
+        {   
+            "name": "iuasdiuasdiu",
+            "filename": "iaushdiuh",
+            "productId": 3,
+            "hasGuide" : false,
+            "compatWithTool" : true,
+            "forFlashSize": 524288,
+            "availableVersions": []
+        }
+    ]
+}
