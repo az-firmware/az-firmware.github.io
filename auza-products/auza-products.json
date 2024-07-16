@@ -23,15 +23,6 @@
                 "1.0.0",
                 "1.0.1"
             ]
-        },
-        {   
-            "name": "iuasdiuasdiu",
-            "filename": "iaushdiuh",
-            "productId": 3,
-            "hasGuide" : false,
-            "compatWithTool" : true,
-            "forFlashSize": 524288,
-            "availableVersions": []
         }
     ]
 }
