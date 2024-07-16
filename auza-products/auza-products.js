@@ -1,4 +1,4 @@
-{
+var AuzaProductsData = {
     "auzaProducts": [
         {   
             "name": "Wave Packets",
@@ -10,18 +10,6 @@
             "availableVersions": [
                 "1.0.3",
                 "1.0.2"
-            ]
-        },
-        {   
-            "name": "Pretend Future Module",
-            "filename": "pretend_future_module",
-            "productId": 2,
-            "hasGuide" : true,
-            "compatWithTool" : true,
-            "forFlashSize": 524288,
-            "availableVersions": [
-                "1.0.0",
-                "1.0.1"
             ]
         }
     ]

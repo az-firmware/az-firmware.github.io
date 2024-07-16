@@ -556,10 +556,10 @@ document.addEventListener('DOMContentLoaded', events => {
 	document.getElementById('default-tab').click();
 
 	// Load auza firmware data
-	fetch('auza-products/auza-products.JSON')
-		.then(response => response.json())
-		.then(data => {
-			auzaProducts = data.auzaProducts;
+	// fetch('auza-products/auza-products.JSON')
+	// 	.then(response => response.json())
+	// 	.then(data => {
+			auzaProducts = AuzaProductsData.auzaProducts;
 
 			// Populate 'Select Module' dropdown from JSON
 			let select = document.getElementById('select-product').getElementsByTagName('select')[0];
@@ -606,10 +606,10 @@ document.addEventListener('DOMContentLoaded', events => {
 				}
 			}
 
-		})	
-		.catch(err => {
-			console.log('Didn\'t load auza products JSON. Error: ', err);
-		})
+		// })	
+		// .catch(err => {
+		// 	console.log('Didn\'t load auza products JSON. Error: ', err);
+		// })
 
 
 	createDropdown('select-version', updateLatestBox);	
