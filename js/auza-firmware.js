@@ -14,30 +14,50 @@ var auzaDevice = {
 }
 var firmwareInfo = {};
 
-function openTab(evt, tabNum){
+function openTab(evt, tabNum, hyperlink){
 
 	var tabLinks = document.getElementsByClassName('tab-link');
-	// Clear all tab statuses
-	for (let i = 0; i < tabLinks.length; i++) {
-		tabLinks[i].classList.remove('active-tab-link');
-		tabLinks[i].classList.remove('inactive-tab-link');
-	}	
-	// Assign active to event element
-	evt.currentTarget.classList.add('active-tab-link');
-	// Assign inactive to all other elements
-	for (let i = 0; i < tabLinks.length; i++) {
-		if(!(tabLinks[i].classList.contains('active-tab-link'))){
-			tabLinks[i].classList.add('inactive-tab-link');
-		}
-	}	
+	if(!hyperlink){
+		// Clear all tab statuses
+		for (let i = 0; i < tabLinks.length; i++) {
+			tabLinks[i].classList.remove('active-tab-link');
+			tabLinks[i].classList.remove('inactive-tab-link');
+		}	
+		// Assign active to event element
+		evt.currentTarget.classList.add('active-tab-link');
+		// Assign inactive to all other elements
+		for (let i = 0; i < tabLinks.length; i++) {
+			if(!(tabLinks[i].classList.contains('active-tab-link'))){
+				tabLinks[i].classList.add('inactive-tab-link');
+			}
+		}	
 
-	if(tabNum == 1){
-		document.getElementById('tab-connect-guide').style.display = 'block';
-		document.getElementById('tab-firmware-tool').style.display = 'none';
-	} else if(tabNum == 2){
+		if(tabNum == 1){
+			document.getElementById('tab-connect-guide').style.display = 'block';
+			document.getElementById('tab-firmware-tool').style.display = 'none';
+		} else if(tabNum == 2){
+			document.getElementById('tab-connect-guide').style.display = 'none';
+			document.getElementById('tab-firmware-tool').style.display = 'block';
+		}
+	}
+	else{
+		// Clear all tab statuses
+		for (let i = 0; i < tabLinks.length; i++) {
+			tabLinks[i].classList.remove('active-tab-link');
+			tabLinks[i].classList.remove('inactive-tab-link');
+		}	
+		// Assign active to tool tab
+		document.getElementById('tool-tab').classList.add('active-tab-link');
+		// Assign inactive to all other elements
+		for (let i = 0; i < tabLinks.length; i++) {
+			if(!(tabLinks[i].classList.contains('active-tab-link'))){
+				tabLinks[i].classList.add('inactive-tab-link');
+			}
+		}	
+
 		document.getElementById('tab-connect-guide').style.display = 'none';
 		document.getElementById('tab-firmware-tool').style.display = 'block';
-	}
+	}	
 }
 
 function updateGuideProduct(){

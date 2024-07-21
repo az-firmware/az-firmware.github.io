@@ -36,8 +36,8 @@
       <h1 id='page-title'></h1>
     </div>
     <div id="tabs">
-      <button class="tab-link" onclick="openTab(event, 1)" id="default-tab">Connection Guide</button>
-      <button class="tab-link" onclick="openTab(event, 2)">Firmware Tool</button>
+      <button class="tab-link" onclick="openTab(event, 1, false)" id="default-tab">Connection Guide</button>
+      <button class="tab-link" onclick="openTab(event, 2, false)" id="tool-tab">Firmware Tool</button>
     </div>    
     <div id="tab-connect-guide">
       <div id="select-product" class="custom-dropdown">
@@ -51,13 +51,14 @@
           <b>Computer/ Device</b>
           <ul>
             <li>Apple Mac, running macOS</li>
-            <li>Windows PC (10 or later) with this windows driver installed</li>
+            <li>Windows PC (10 or later) with the device driver installed. See "Are you using Windows?" below.</li>
             <li>Android device (the device and USB cable/ adaptor both need to be USB OTG compatible) </li>
           </ul> 
           <br><b>Web Browser</b>
           <ul>
             <li>Google Chrome (version 61 or later)</li>
             <li>Microsoft Edge (version 79 or later)</li>
+            <li><span style="color:red">No Safari support</span></li>
           </ul>  
         </div>
       </div>

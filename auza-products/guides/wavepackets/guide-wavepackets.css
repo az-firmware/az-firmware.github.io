@@ -2,6 +2,15 @@
   display: block;
 }
 
+#wavepackets-windows-guide{
+  border-left-width: 0px;
+  border-right-width: 0px;  
+  border-top-width: 0px;
+  border-bottom-width: 2px;
+  border-color: lightgrey;
+  border-style: double; 
+}
+
 #wavepackets-guide #connect-diagrams{
   display: flex;
   flex-direction: row;
@@ -15,7 +24,23 @@
 }
 
 #wavepackets-guide .diagram-container{
+  padding-top:20px;
+  padding-bottom:50px;
+  width: 300px;
+  max-width: 100%;
+}  
+
+#wavepackets-guide .screenshot {
+  width: 150%;
 	height: 100%;
+  object-fit: contain;
+}
+
+#wavepackets-guide .screenshot-container{
+  padding-top:20px;
+  padding-bottom:50px;
+  width: 300px;
+  max-width: 100%;
 }  
 
 #wavepackets-guide .diagram {
@@ -23,3 +48,10 @@
 	height: 100%;
   object-fit: contain;
 }
+
+#wavepackets-guide .firmware-tool-link {
+  color:hsl(172, 72%, 33%); /* Link color */
+  text-decoration: none; /* Underline text */
+  cursor: pointer; 
+}
+

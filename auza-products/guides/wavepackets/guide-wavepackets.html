@@ -12,28 +12,56 @@
     <!-- Must be wrapped in 'guide' class div-->
     <div class="guide">  
       <div id="wavepackets-guide">
-        <div class="guide-heading"> <b>Connecting Wave Packets:</b></div>  
-        Wave Packets needs to boot in to firmware update mode to be recognised by the Auza Firmware Tool.
-        <br><br>
-        Follow these steps strictly in this order:
-        <br><br>
-        <ol>
-          <li>&nbsp Turn off your Eurorack power supply.</li>
-          <li>&nbsp Connect a USB cable between the port (USB Micro B) on the back of the module and your computer/ device.
-          <li>&nbsp Hold the PCB button while turning your Eurorack power supply on. Release button once power is on.
-        </ol>  
-        <div id="connect-diagrams">
-          <div class="diagram-container">
-            <img class="diagram" src="auza-products/guides/wavepackets/resources/attach_usb.png" alt="Auza">
-          </div>
-          <div class="diagram-container">
-            <img class="diagram" src="auza-products/guides/wavepackets/resources/press_button.png" alt="Auza">
-          </div>
+        <div id = "wavepackets-windows-guide">
+          <div class="guide-heading"> <b>Are you on Windows?</b></div>  
+          On a windows PC, a device driver first needs to be installed for the module to be recognised by the Firmware Tool. To install the driver, please follow these steps:
+          <br><br>
+          <ol>
+            <li>&nbsp A windows application called Zadig will be used to install the driver. Download the latest version of Zadig <a href="https://zadig.akeo.ie">here</a>.<br><br> </li>
+            <li>&nbsp Wave Packets needs to boot in to 'firmware update mode'. Follow steps 1-4 on 'Connecting Wave Packets' below this section, and then return to step 3 here. <br><br> </li>
+            <li>&nbsp Assuming Wave Packets is now correctly in 'firmware update mode', open Zadig. In the menu bar, click on Options and tick 'List All Devices'.  
+              <br>
+              <div class="screenshot-container">
+                <img class="screenshot" src="resources/zadig-screenshots/zadig-screenshot1.png" alt="Auza">
+              </div>
+            </li>
+            <li>&nbsp Select "STM32 BOOTLOADER" from the dropdown menu, and select 'WinUSB" to the right of the green arrow. Then press 'Install Driver'.  
+              <br>
+              <div class="screenshot-container">
+                <img class="screenshot" src="resources/zadig-screenshots/zadig-screenshot2.png" alt="Auza">
+              </div>
+            </li>
+            <li>&nbsp Once the driver installation is complete, the module is ready to be used with the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a>. <br> </li>
+          </ol>
+
+          <br><br>
+
         </div>
-        If the module's LEDs remain off once powered on, it's ready to be used with the Firmware Tool!
-        <br>
-        The USB device name is STM32 BOOTLOADER.
+        <div id = "wavepackets-connecting-guide">
+          <div class="guide-heading"> <b>Connecting Wave Packets:</b></div>  
+          Before the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a> can be used to issue updates, Wave Packets first needs to boot in to 'firmware update mode'.
+          <br><br>
+          Follow these steps strictly in this order:
+          <br><br>
+          <ol>
+            <li>&nbsp Turn off your Eurorack power supply. <br><br> </li>
+            <li>&nbsp Connect a USB cable between the port (USB Micro B) on the back of the module and your computer/ device.
+              <div class="diagram-container">
+                <img class="diagram" src="auza-products/guides/wavepackets/resources/attach_usb.png" alt="Auza">
+              </div>
+            </li>  
+            <li>&nbsp Hold the PCB button <b>while</b> turning your Eurorack power supply on. Release button once power is on.
+              <div class="diagram-container">
+                <img class="diagram" src="auza-products/guides/wavepackets/resources/press_button.png" alt="Auza">
+              </div>
+            </li>  
+            <li>&nbsp If the module's LEDs remain off once powered on, don't panic - it's successfully booted in to firmware update mode.
+              <br><br>
+            </li>
+            <li>&nbsp The module can now be used with the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a>! The USB device name is STM32 BOOTLOADER.<br><br> </li>
+          </ol>  
+        </div>  
       </div> 
     </div>     
   </body>
-</html>
+</html> 
