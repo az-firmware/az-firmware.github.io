@@ -14,6 +14,25 @@ var auzaDevice = {
 }
 var firmwareInfo = {};
 
+function expandSection(event, sectionID){
+	
+	var content = document.getElementById(sectionID);
+	if(content.style.maxHeight == '0px'){
+	  content.style.maxHeight = '1200px';
+	}
+	else{
+	  content.style.maxHeight = '0px';
+	}
+
+	var innerHTML = event.target.innerHTML;
+	if(innerHTML.includes('►')){
+		event.target.innerHTML = innerHTML.replace('►', '▼');
+	} 
+	else if(innerHTML.includes('▼')){
+		event.target.innerHTML = innerHTML.replace('▼', '►');
+	}
+  }
+
 function openTab(evt, tabNum, hyperlink){
 
 	var tabLinks = document.getElementsByClassName('tab-link');

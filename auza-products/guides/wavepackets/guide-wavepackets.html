@@ -13,29 +13,29 @@
     <div class="guide">  
       <div id="wavepackets-guide">
         <div id = "wavepackets-windows-guide">
-          <div class="guide-heading"> <b>Are you on Windows?</b></div>  
-          On a windows PC, a device driver first needs to be installed for the module to be recognised by the Firmware Tool. To install the driver, please follow these steps:
-          <br><br>
-          <ol>
-            <li>&nbsp A windows application called Zadig will be used to install the driver. Download the latest version of Zadig <a href="https://zadig.akeo.ie">here</a>.<br><br> </li>
-            <li>&nbsp Wave Packets needs to boot in to 'firmware update mode'. Follow steps 1-4 on 'Connecting Wave Packets' below this section, and then return to step 3 here. <br><br> </li>
-            <li>&nbsp Assuming Wave Packets is now correctly in 'firmware update mode', open Zadig. In the menu bar, click on Options and tick 'List All Devices'.  
-              <br>
-              <div class="screenshot-container">
-                <img class="screenshot" src="resources/zadig-screenshots/zadig-screenshot1.png" alt="Auza">
-              </div>
-            </li>
-            <li>&nbsp Select "STM32 BOOTLOADER" from the dropdown menu, and select 'WinUSB" to the right of the green arrow. Then press 'Install Driver'.  
-              <br>
-              <div class="screenshot-container">
-                <img class="screenshot" src="resources/zadig-screenshots/zadig-screenshot2.png" alt="Auza">
-              </div>
-            </li>
-            <li>&nbsp Once the driver installation is complete, the module is ready to be used with the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a>. <br> </li>
-          </ol>
-
-          <br><br>
-
+          <div id= "windows-question" class="guide-heading" onclick="expandSection(event,'wp-windows-guide-content')"> <b><span style="font-size: 14px">►</span> &nbsp Driver Installation for Windows:</b></div>  
+          <div id = "wp-windows-guide-content" style="max-height: 0px;">
+            On a Windows PC, a device driver first needs to be installed for the module to be recognised by the Firmware Tool. To install the driver, please follow these steps:
+            <br><br>
+            <ol>
+              <li>&nbsp A Windows application called Zadig will be used to install the driver. Download the latest version of Zadig <a href="https://zadig.akeo.ie">here</a>.<br><br> </li>
+              <li>&nbsp Wave Packets needs to boot in to 'firmware update mode'. Follow steps 1-4 on 'Connecting Wave Packets' below this section, and then return to step 3 here. <br><br> </li>
+              <li>&nbsp Assuming Wave Packets is now correctly in 'firmware update mode', open Zadig. In the menu bar, click on Options and tick 'List All Devices'.  
+                <br>
+                <div class="screenshot-container">
+                  <img class="screenshot" src="resources/zadig-screenshots/zadig-screenshot1.png" alt="Auza">
+                </div>
+              </li>
+              <li>&nbsp Select "STM32 BOOTLOADER" from the dropdown menu, and select "WinUSB" to the right of the green arrow. Then press "Install Driver".  
+                <br>
+                <div class="screenshot-container">
+                  <img class="screenshot" src="resources/zadig-screenshots/zadig-screenshot2.png" alt="Auza">
+                </div>
+              </li>
+              <li>&nbsp Once the driver installation is complete, the module is ready to be used with the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a>. <br> </li>
+              <br><br>
+            </ol>
+          </div>
         </div>
         <div id = "wavepackets-connecting-guide">
           <div class="guide-heading"> <b>Connecting Wave Packets:</b></div>  
@@ -55,13 +55,14 @@
                 <img class="diagram" src="auza-products/guides/wavepackets/resources/press_button.png" alt="Auza">
               </div>
             </li>  
-            <li>&nbsp If the module's LEDs remain off once powered on, don't panic - it's successfully booted in to firmware update mode.
+            <li>&nbsp If the LEDs remain off once powered on, don't panic - this means it's successfully booted in to firmware update mode.
               <br><br>
             </li>
-            <li>&nbsp The module can now be used with the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a>! The USB device name is STM32 BOOTLOADER.<br><br> </li>
+            <li>&nbsp The module should now communicate with the <a class="firmware-tool-link" onclick="openTab(event, 2, true);">Firmware Tool</a>! The USB device name is STM32 BOOTLOADER.<br><br> </li>
           </ol>  
         </div>  
       </div> 
-    </div>     
+    </div>  
+  
   </body>
 </html> 

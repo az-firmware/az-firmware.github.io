@@ -8,8 +8,19 @@
   border-top-width: 0px;
   border-bottom-width: 2px;
   border-color: lightgrey;
-  border-style: double; 
+  border-style: solid; 
 }
+
+#wp-windows-guide-content{
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.4s linear;
+}
+
+#wavepackets-guide #windows-question{
+  cursor: pointer; 
+}  
+
 
 #wavepackets-guide #connect-diagrams{
   display: flex;
@@ -31,8 +42,9 @@
 }  
 
 #wavepackets-guide .screenshot {
-  width: 150%;
+  width: 500px;
 	height: 100%;
+  max-width: 90vw;
   object-fit: contain;
 }
 
