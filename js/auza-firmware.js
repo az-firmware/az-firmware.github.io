@@ -557,10 +557,10 @@ function displayProgressInfo(message, secondLine){
 	let progInfo = document.getElementById('proginfo');
 
 	if(message === 'Erasing DFU device memory'){
-		message = 'Erasing ARM device memory';
+		message = '1/2 Erasing ARM device memory';
 	}
 	else if(message === 'Copying data from browser to DFU device'){
-		message = 'Flashing ARM device memory with firmware binary';
+		message = '2/2 Flashing ARM device memory with firmware binary';
 	}
 	
 	if(secondLine){

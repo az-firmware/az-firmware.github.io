@@ -226,8 +226,7 @@ progress::-webkit-progress-value {
 }
 
 #update-div{
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 45%;
   min-width: 330px;
   border-top: 2px solid rgb(186, 186, 186);
