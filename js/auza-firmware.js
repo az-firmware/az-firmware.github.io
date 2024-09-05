@@ -10,7 +10,8 @@ var auzaDevice = {
 	'detectedFirmwareV': null,
 	'detectedFlashSize': null,
 	'isBlankChip': false,
-	'HasUpdated': false
+	'HasUpdated': false,
+	'isDevVersion': false
 }
 var firmwareInfo = {};
 
@@ -278,10 +279,12 @@ function parseAuzaInfo(arrayBuff){
 
 		blankDevice &= (word == 0xFFFFFFFF);
 
-		if(word == 0x61757A61 && imprintIndex != -1){
+		if(word == 0x61757A61 && imprintIndex == -1){
 			imprintIndex = i;
 		}
 	}	
+
+	auzaDevice.isDevVersion = false; // default
 
 	// Option 1) Blank device
 	if(blankDevice){
@@ -295,8 +298,13 @@ function parseAuzaInfo(arrayBuff){
 		for(let i=0; i < auzaProducts.length; i++){
 			if(words[imprintIndex + 2] == auzaProducts[i].productId){
 				auzaDevice.detectedProduct = auzaProducts[i].name;
-			}	
-			break;
+				if(words[imprintIndex + 5] == 0x01){
+					auzaDevice.isDevVersion = true;
+				}
+
+				break;
+			}
+
 		}
 		// String together firmware version direct from binary
 		auzaDevice.detectedFirmwareV = dataView.getUint8(((imprintIndex+3)*4)+2).toString() + '.'
@@ -374,7 +382,7 @@ function onDisconnect(extraMessage){
 	connectButton = document.getElementById('connect');
 	connectButton.classList.replace('connect-disconnect', 'connect-connect');
 	connectButton.textContent = 'CONNECT';
-	connectButton.nextElementSibling.textContent= 'to STM32 BOOTLOADER';
+	connectButton.nextElementSibling.textContent= 'to STM32 BOOTLOADER / DFU in FS Mode';
 
 	setLatestBox('default');
 
@@ -675,8 +683,8 @@ document.addEventListener('DOMContentLoaded', events => {
 			const filters = [
 				{
 				vendorId: 0x0483, 
-				productId: 0xdf11, 
-				serialNumber: 'STM32FxSTM32'
+				productId: 0xdf11,
+				// serialNumber: ['STM32FxSTM32', 'STM32G43x/G44x']
 				}
 			] 
 
@@ -780,8 +788,8 @@ document.addEventListener('DOMContentLoaded', events => {
 
 				let response = await fetch(binaryPath);
 				binaryFile = await response.arrayBuffer();
+				break;
 			}
-			break;
 		}	
 
 		if(device && binaryFile != null){
@@ -845,14 +853,19 @@ document.addEventListener('DOMContentLoaded', events => {
 			let auzaFirmware = parseAuzaInfo(arrayBuff);
 
 			if(auzaFirmware){
-				displayReadResult(auzaDevice.detectedProduct + ' ' + 'Firmware' + ' '
-					+ auzaDevice.detectedFirmwareV);
-				if(auzaDevice.detectedFirmwareV == determineLatestFirmware(auzaDevice.detectedProduct)){
-					displayReadResult('This is the latest version available', true)
+				if(auzaDevice.isDevVersion == true){
+					displayReadResult('DEVELOPMENT CODE (' + auzaDevice.detectedProduct + ' ' + auzaDevice.detectedFirmwareV + ')', true)
 				}
-				else{
-					displayReadResult('A newer version is available', true)
-				}	
+				else{	
+					displayReadResult(auzaDevice.detectedProduct + ' ' + 'Firmware' + ' '
+						+ auzaDevice.detectedFirmwareV);
+					if(auzaDevice.detectedFirmwareV == determineLatestFirmware(auzaDevice.detectedProduct)){
+						displayReadResult('This is the latest version available', true)
+					}
+					else{
+						displayReadResult('A newer version is available', true)
+					}
+				}		
 			}
 			else if(auzaDevice.isBlankChip){
 				displayReadResult('No firmware detected');

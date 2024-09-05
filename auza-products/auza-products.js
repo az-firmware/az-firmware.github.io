@@ -11,6 +11,17 @@ var AuzaProductsData = {
                 "1.0.3",
                 "1.0.2"
             ]
+        },
+        {   
+            "name": "WP CVs",
+            "filename": "wp_cvs",
+            "productId": 2,
+            "hasGuide" : false,
+            "compatWithTool" : true,
+            "forFlashSize": 131072,
+            "availableVersions": [
+                "1.0.0"
+            ]
         }
     ]
 }
