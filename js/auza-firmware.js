@@ -749,9 +749,10 @@ document.addEventListener('DOMContentLoaded', events => {
 								let select = document.getElementById('select-version').getElementsByTagName('select')[0];
 								for(let i = 0; i < firmwareList.length; i++){
 									let option = document.createElement('option');
-									option.value = i+1;
+									// Reverse order
+									option.value = firmwareList.length - i; 
 									option.text = firmwareList[i];
-									select.add(option, i+1);
+									select.add(option, firmwareList.length - i);
 								}
 								updateDropdownOptions('select-version');
 

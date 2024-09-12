@@ -9,7 +9,8 @@ var AuzaProductsData = {
             "forFlashSize": 524288,
             "availableVersions": [
                 "1.0.3",
-                "1.0.2"
+                "1.0.2",
+                "1.1.0"
             ]
         },
         {   
