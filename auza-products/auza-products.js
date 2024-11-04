@@ -21,6 +21,7 @@ var AuzaProductsData = {
             "compatWithTool" : true,
             "forFlashSize": 131072,
             "availableVersions": [
+                "1.0.1",
                 "1.0.0"
             ]
         }
